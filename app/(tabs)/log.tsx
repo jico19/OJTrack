@@ -1,8 +1,11 @@
+import PeriodToggle from '@/src/components/periodToggle';
 import { fetchAllEntry, logEntry } from '@/src/db/services';
-import { colors, globalStyles } from '@/src/styles/gloabl_styles';
+import { globalStyles } from '@/src/styles/gloabl_styles';
 import { Controller, useForm } from 'react-hook-form';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
+
+
 
 interface LogFormData {
     timeIn: string;
@@ -11,35 +14,6 @@ interface LogFormData {
     timeOutPeriod: 'AM' | 'PM';
 }
 
-const PeriodToggle = ({ value, onChange }: { value: 'AM' | 'PM', onChange: (val: 'AM' | 'PM') => void }) => (
-    <View style={[globalStyles.row, { borderWidth: 1, borderColor: colors.border, borderRadius: 8, overflow: 'hidden', height: 48 }]}>
-        <Pressable
-            onPress={() => onChange('AM')}
-            style={{
-                flex: 1,
-                height: '100%',
-                backgroundColor: value === 'AM' ? colors.primary : 'transparent',
-                alignItems: 'center',
-                justifyContent: 'center'
-            }}
-        >
-            <Text style={{ color: value === 'AM' ? '#fff' : colors.text, fontWeight: '600' }}>AM</Text>
-        </Pressable>
-        <View style={{ width: 1, backgroundColor: colors.border, height: '100%' }} />
-        <Pressable
-            onPress={() => onChange('PM')}
-            style={{
-                flex: 1,
-                height: '100%',
-                backgroundColor: value === 'PM' ? colors.primary : 'transparent',
-                alignItems: 'center',
-                justifyContent: 'center'
-            }}
-        >
-            <Text style={{ color: value === 'PM' ? '#fff' : colors.text, fontWeight: '600' }}>PM</Text>
-        </Pressable>
-    </View>
-);
 
 const LogScreen = () => {
     const {
@@ -133,10 +107,16 @@ const LogScreen = () => {
 
 
                 <Pressable style={globalStyles.btnPrimary} onPress={handleSubmit(onSubmit)}>
-                    <Text style={{ color: "#fff", fontWeight: 'black' }}>
+                    <Text style={globalStyles.btnText}>
                         Submit
                     </Text>
                 </Pressable>
+
+                {/* <Pressable style={globalStyles.btnPrimary} onPress={flushData}>
+                    <Text style={globalStyles.btnText}>
+                        Delete all data
+                    </Text>
+                </Pressable> */}
 
             </View>
 

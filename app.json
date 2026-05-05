@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "testing-rn",
-    "slug": "testing-rn",
+    "name": "OJTrack",
+    "slug": "ojtrack",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -19,7 +19,8 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.jerwinquijano19.ojtrack"
     },
     "web": {
       "output": "static",
@@ -44,6 +45,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "f84be9a5-8114-4888-b6b4-4ec1f4cf47bf"
+      }
+    },
+    "owner": "jerwinquijano19"
   }
 }

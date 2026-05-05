@@ -16,7 +16,6 @@ export default function TabLayout() {
           title: "Log",
           headerShown: false
         }}
-      
       />
       <Tabs.Screen
         name="history"
@@ -24,7 +23,13 @@ export default function TabLayout() {
           title: "History",
           headerShown: false
         }}
-      
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: "Settings",
+          headerShown: false
+        }}
       />
 
     </Tabs>
